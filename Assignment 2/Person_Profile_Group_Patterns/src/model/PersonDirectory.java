@@ -60,6 +60,12 @@ public class PersonDirectory {
         persons.remove(person);
     }
     
+    /**
+     * Method to search person
+     * 
+     * @param searchValue for the person
+     * @return person object
+     */
     public Person searchPerson(String searchValue) {
         Person existingPerson = null;
         for (Person p : getPersons()) {
