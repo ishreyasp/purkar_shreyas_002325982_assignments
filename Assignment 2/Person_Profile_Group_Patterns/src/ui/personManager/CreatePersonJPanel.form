@@ -302,11 +302,13 @@
                   <Component id="lblErrWrkState" min="-2" pref="12" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="lblWrkZip" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtWrkZip" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblWrkPhoneNum" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtWrkPhoneNum" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txtWrkZip" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblWrkPhoneNum" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtWrkPhoneNum" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">

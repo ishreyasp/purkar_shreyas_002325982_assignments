@@ -519,11 +519,12 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
                             .addComponent(lblErrWrkUnit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(lblErrWrkState, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblWrkZip)
-                    .addComponent(txtWrkZip, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblWrkPhoneNum)
-                    .addComponent(txtWrkPhoneNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtWrkZip, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblWrkPhoneNum)
+                        .addComponent(txtWrkPhoneNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblErrWrkZip)
@@ -841,6 +842,13 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
                 JOptionPane.WARNING_MESSAGE);
             return null;
         }
+        if (txtHmPhoneNum.getText().length() != 10) {
+            JOptionPane.showMessageDialog(this, 
+                "Phone number of your home must be 10 digits only", 
+                "Warning", 
+                JOptionPane.WARNING_MESSAGE);
+            return null;
+        }
         homeAddress.setState(txtHmState.getText());
         homeAddress.setStreetAddress(txtHmStreetAdd.getText());
         try {
@@ -872,6 +880,13 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
         } catch(NumberFormatException e) {
             JOptionPane.showMessageDialog(this, 
                 "Phone number of your work can only be numeric value", 
+                "Warning", 
+                JOptionPane.WARNING_MESSAGE);
+            return null;
+        }
+         if (txtWrkPhoneNum.getText().length() != 10) {
+            JOptionPane.showMessageDialog(this, 
+                "Phone number of your work must be 10 digits only", 
                 "Warning", 
                 JOptionPane.WARNING_MESSAGE);
             return null;
