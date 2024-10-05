@@ -95,5 +95,14 @@ public class Person {
     public void setWorkAddress(WorkAddress workAddress) {
         this.workAddress = workAddress;
     }
-        
+
+    /**
+     * 
+     * @return 
+     */
+    @Override
+    public String toString() {
+        return getFirstName();
+    }
+       
 }

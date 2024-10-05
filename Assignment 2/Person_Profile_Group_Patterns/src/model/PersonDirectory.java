@@ -14,23 +14,43 @@ public class PersonDirectory {
     
     private ArrayList<Person> persons;
 
+    /**
+     * 
+     */
     public PersonDirectory() {
         persons = new ArrayList<>();
     }
 
+    /**
+     * 
+     * @return 
+     */
     public ArrayList<Person> getPersons() {
         return persons;
     }
 
+    /**
+     * 
+     * @param persons 
+     */
     public void setPersons(ArrayList<Person> persons) {
         this.persons = persons;
     }
     
+    /**
+     * 
+     * @param person
+     * @return 
+     */
     public Person addPerson(Person person) {
         persons.add(person);
         return person;
     }
     
+    /**
+     * 
+     * @param person 
+     */
     public void deletePerson(Person person) {
         persons.remove(person);
     }

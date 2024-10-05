@@ -13,14 +13,14 @@ public class WorkAddress {
     private String streetAddress;
     private String city;
     private String state;
-    private String phoneNumber;
-    private String zip;
-    private int unitNumber;
+    private long phoneNumber;
+    private int zip;
+    private short unitNumber;
 
     public WorkAddress() {
     }
 
-    public WorkAddress(String streetAddress, String city, String state, String phoneNumber, String zip, int unitNumber) {
+    public WorkAddress(String streetAddress, String city, String state, long phoneNumber, int zip, short unitNumber) {
         this.streetAddress = streetAddress;
         this.city = city;
         this.state = state;
@@ -53,27 +53,27 @@ public class WorkAddress {
         this.state = state;
     }
 
-    public String getPhoneNumber() {
+    public long getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(long phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getZip() {
+    public int getZip() {
         return zip;
     }
 
-    public void setZip(String zip) {
+    public void setZip(int zip) {
         this.zip = zip;
     }
 
-    public int getUnitNumber() {
+    public short getUnitNumber() {
         return unitNumber;
     }
 
-    public void setUnitNumber(int unitNumber) {
+    public void setUnitNumber(short unitNumber) {
         this.unitNumber = unitNumber;
     }
     
