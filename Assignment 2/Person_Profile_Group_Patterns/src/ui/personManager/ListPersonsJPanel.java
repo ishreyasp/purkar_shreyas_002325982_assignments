@@ -71,6 +71,7 @@ public class ListPersonsJPanel extends javax.swing.JPanel {
 
         btnViewPerson.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/icons/view.png"))); // NOI18N
         btnViewPerson.setText("VIEW PERSON");
+        btnViewPerson.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnViewPerson.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewPersonActionPerformed(evt);
@@ -79,6 +80,7 @@ public class ListPersonsJPanel extends javax.swing.JPanel {
 
         btnDeletePerson.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/icons/delete.png"))); // NOI18N
         btnDeletePerson.setText("DELETE PERSON");
+        btnDeletePerson.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDeletePerson.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeletePersonActionPerformed(evt);

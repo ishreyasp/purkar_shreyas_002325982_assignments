@@ -216,39 +216,55 @@ public class PersonManagementJPanel extends javax.swing.JPanel {
         homeAddress.setCity("Boston");
         homeAddress.setZip(02130);
         homeAddress.setStreetAddress("11 Center Street");
+        homeAddress.setPhoneNumber(3652148790L);
+        homeAddress.setState("Massachusetts");
+        homeAddress.setUnitNumber((short) 3);
         
         WorkAddress workAddress = new WorkAddress();
         workAddress.setCity("New York");
         workAddress.setZip(2776);
         workAddress.setStreetAddress("11 Center Street");
+        workAddress.setPhoneNumber(3652148790L);
+        workAddress.setState("Massachusetts");
+        workAddress.setUnitNumber((short) 3);
         
         Person firstPerson = new Person();
         firstPerson.setFirstName("John");
         firstPerson.setLastName("Doe");
+        firstPerson.setAge((byte) 26);
+        firstPerson.setSsn("2548-8954-855");
         firstPerson.setHomeAddress(homeAddress);
         firstPerson.setWorkAddress(workAddress);
         
         Person secondPerson = new Person();
         secondPerson.setFirstName("Tony");
         secondPerson.setLastName("Stark");
+        secondPerson.setAge((byte) 26);
+        secondPerson.setSsn("2548-8954-855");
         secondPerson.setHomeAddress(homeAddress);
         secondPerson.setWorkAddress(workAddress);
         
         Person thridPerson = new Person();
         thridPerson.setFirstName("Ricky");
         thridPerson.setLastName("Ponting");
+        thridPerson.setAge((byte) 26);
+        thridPerson.setSsn("2548-8954-855");
         thridPerson.setHomeAddress(homeAddress);
         thridPerson.setWorkAddress(workAddress);
         
         Person fourthPerson = new Person();
         fourthPerson.setFirstName("Tommy");
         fourthPerson.setLastName("Johnson");
+        fourthPerson.setAge((byte) 26);
+        fourthPerson.setSsn("2548-8954-855");
         fourthPerson.setHomeAddress(homeAddress);
         fourthPerson.setWorkAddress(workAddress);
         
         Person fifthPerson = new Person();
         fifthPerson.setFirstName("Daniel");
         fifthPerson.setLastName("Thomson");
+        fifthPerson.setAge((byte) 26);
+        fifthPerson.setSsn("2548-8954-855");
         fifthPerson.setHomeAddress(homeAddress);
         fifthPerson.setWorkAddress(workAddress);
         

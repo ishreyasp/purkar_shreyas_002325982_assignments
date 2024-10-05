@@ -552,7 +552,7 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
              person.setAge(Byte.parseByte(txtAge.getText()));
          } catch(NumberFormatException e) {
            JOptionPane.showMessageDialog(this, 
-                "Please check the age input", 
+                "Age can only be numeric value", 
                 "Warning", 
                 JOptionPane.WARNING_MESSAGE);
             return;
@@ -836,7 +836,7 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
             homeAddress.setPhoneNumber(Long.parseLong(txtHmPhoneNum.getText()));
         } catch(NumberFormatException e) {
             JOptionPane.showMessageDialog(this, 
-                "Please check the phone number input", 
+                "Phone number of your home can only be numeric value", 
                 "Warning", 
                 JOptionPane.WARNING_MESSAGE);
             return null;
@@ -847,7 +847,7 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
             homeAddress.setUnitNumber(Short.parseShort(txtHmUnit.getText()));
         } catch(NumberFormatException e) {
             JOptionPane.showMessageDialog(this, 
-                "Please check the unit number input", 
+                "Unit number of your home can only be numeric value", 
                 "Warning", 
                 JOptionPane.WARNING_MESSAGE);
             return null;
@@ -856,7 +856,7 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
             homeAddress.setZip(Integer.parseInt(txtHmZip.getText()));
         } catch(NumberFormatException e) {
             JOptionPane.showMessageDialog(this, 
-                "Please check the zip code input", 
+                "Zip code of your home can only be numeric value", 
                 "Warning", 
                 JOptionPane.WARNING_MESSAGE);
             return null;
@@ -871,7 +871,7 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
             workAddress.setPhoneNumber(Long.parseLong(txtWrkPhoneNum.getText()));
         } catch(NumberFormatException e) {
             JOptionPane.showMessageDialog(this, 
-                "Please check the phone number input", 
+                "Phone number of your work can only be numeric value", 
                 "Warning", 
                 JOptionPane.WARNING_MESSAGE);
             return null;
@@ -882,7 +882,7 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
             workAddress.setUnitNumber(Short.parseShort(txtWrkUnit.getText()));
         } catch(NumberFormatException e) {
             JOptionPane.showMessageDialog(this, 
-                "Please check the unit number input", 
+                "Unit number of your work can only be numeric value", 
                 "Warning", 
                 JOptionPane.WARNING_MESSAGE);
             return null;
@@ -891,7 +891,7 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
             workAddress.setZip(Integer.parseInt(txtWrkZip.getText()));
         } catch(NumberFormatException e) {
             JOptionPane.showMessageDialog(this, 
-                "Please check the zip code input", 
+                "Zip code of your work can only be numeric value", 
                 "Warning", 
                 JOptionPane.WARNING_MESSAGE);
             return null;
