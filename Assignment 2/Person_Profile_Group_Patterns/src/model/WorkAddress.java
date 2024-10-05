@@ -5,7 +5,8 @@
 package model;
 
 /**
- *
+ * Class to store work address of the person
+ * 
  * @author Shreyas Purkar
  */
 public class WorkAddress {
@@ -17,10 +18,28 @@ public class WorkAddress {
     private int zip;
     private short unitNumber;
 
+    /**
+     * Default constructor
+     */
     public WorkAddress() {
     }
 
-    public WorkAddress(String streetAddress, String city, String state, long phoneNumber, int zip, short unitNumber) {
+    /**
+     * Parameterized constructor
+     * 
+     * @param streetAddress of work of the person
+     * @param city of work of the person
+     * @param state of work of the person
+     * @param phoneNumber of work of the person
+     * @param zip of work of the person
+     * @param unitNumber of work of the person
+     */
+    public WorkAddress(String streetAddress, 
+            String city, 
+            String state, 
+            long phoneNumber, 
+            int zip, 
+            short unitNumber) {
         this.streetAddress = streetAddress;
         this.city = city;
         this.state = state;

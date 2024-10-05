@@ -97,8 +97,9 @@ public class Person {
     }
 
     /**
+     * Method to parse first name into string
      * 
-     * @return 
+     * @return string value of first name
      */
     @Override
     public String toString() {

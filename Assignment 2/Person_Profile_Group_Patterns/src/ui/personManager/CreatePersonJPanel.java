@@ -12,16 +12,18 @@ import model.PersonDirectory;
 import model.WorkAddress;
 
 /**
- *
- * @author purka
+ * Class for CreatePersonJPanel
+ * 
+ * @author Shreyas Purkar
  */
 public class CreatePersonJPanel extends javax.swing.JPanel {
     
-    private PersonDirectory persons;
-    private JPanel userProcessContainer;
+    private final PersonDirectory persons;
+    private final JPanel userProcessContainer;
 
     /**
      * Creates new form CreatePersonJPanel
+     * 
      * @param persons
      * @param userProcessContainer
      */
@@ -536,8 +538,9 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     /**
+     * Method to handle create person click action
      * 
-     * @param evt 
+     * @param evt event
      */
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
          if (!validateFormFields()) {
@@ -661,6 +664,11 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
         txtWrkPhoneNum.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, false));
     }//GEN-LAST:event_txtWrkPhoneNumKeyReleased
 
+    /**
+     * Method to validate form fields
+     * 
+     * @return true if valid else return false
+     */
     private boolean validateFormFields() {
         if (txtFirstName.getText().isBlank()
                 && txtWrkZip.getText().isBlank()
@@ -811,6 +819,9 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
         return true;
     }
     
+    /**
+     * Method to reset form fields
+     */
     private void resetTextFields() {
         txtAge.setText("");
         txtFirstName.setText("");
@@ -830,6 +841,11 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
         txtWrkZip.setText("");
     }
     
+    /**
+     * Method to validate and fetch home address form fields
+     * 
+     * @return homeAddress object
+     */
     private HomeAddress getHomeAddress() {
         HomeAddress homeAddress = new HomeAddress();
         homeAddress.setCity(txtHmCity.getText());
@@ -872,6 +888,11 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
         return homeAddress;
     }
 
+    /**
+     * Method to validate and fetch work address form fields
+     * 
+     * @return workAddress object
+     */
     private WorkAddress getWorkAddress() {
         WorkAddress workAddress = new WorkAddress();
         workAddress.setCity(txtWrkCity.getText());

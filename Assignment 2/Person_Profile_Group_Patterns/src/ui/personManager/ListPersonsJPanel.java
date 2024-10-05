@@ -12,13 +12,14 @@ import model.Person;
 import model.PersonDirectory;
 
 /**
- *
- * @author purka
+ * Class for ListPersonsJPanel
+ * 
+ * @author Shreyas Purkar
  */
 public class ListPersonsJPanel extends javax.swing.JPanel {
 
-    private PersonDirectory persons;
-    private JPanel userProcessContainer;
+    private final PersonDirectory persons;
+    private final JPanel userProcessContainer;
     
     /**
      * Creates new form ListPersonsJPanel
@@ -29,7 +30,7 @@ public class ListPersonsJPanel extends javax.swing.JPanel {
         this.persons = persons;
         this.userProcessContainer = userProcessContainer;
         
-        loadPersonsInTable();
+        this.loadPersonsInTable();
     }
 
     /**
@@ -118,6 +119,11 @@ public class ListPersonsJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Method to handle view person button click action
+     * 
+     * @param evt event
+     */
     private void btnViewPersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewPersonActionPerformed
         int selectedRow = tblPerson.getSelectedRow();
         
@@ -138,6 +144,11 @@ public class ListPersonsJPanel extends javax.swing.JPanel {
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnViewPersonActionPerformed
 
+    /**
+     * Method to handle delete person button click action
+     * 
+     * @param evt event
+     */
     private void btnDeletePersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletePersonActionPerformed
         int selectedRow = tblPerson.getSelectedRow();
         
@@ -177,6 +188,9 @@ public class ListPersonsJPanel extends javax.swing.JPanel {
     private javax.swing.JTable tblPerson;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * Method to populate all persons in table
+     */
     public void loadPersonsInTable() {
         DefaultTableModel model = (DefaultTableModel) tblPerson.getModel();
         model.setRowCount(0);

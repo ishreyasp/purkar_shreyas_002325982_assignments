@@ -5,7 +5,8 @@
 package model;
 
 /**
- *
+ * Class to store home address of the person
+ * 
  * @author Shreyas Purkar
  */
 public class HomeAddress {
@@ -17,10 +18,28 @@ public class HomeAddress {
     private int zip;
     private short unitNumber;
 
+    /**
+     * Default constructor
+     */
     public HomeAddress() {
     }
 
-    public HomeAddress(String streetAddress, String city, String state, long phoneNumber, int zip, short unitNumber) {
+    /**
+     * Parameterized constructor
+     * 
+     * @param streetAddress of home of the person
+     * @param city of home of the person
+     * @param state of home of the person
+     * @param phoneNumber of home of the person
+     * @param zip of home of the person
+     * @param unitNumberof of home of the person
+     */
+    public HomeAddress(String streetAddress, 
+            String city, 
+            String state, 
+            long phoneNumber, 
+            int zip, 
+            short unitNumber) {
         this.streetAddress = streetAddress;
         this.city = city;
         this.state = state;

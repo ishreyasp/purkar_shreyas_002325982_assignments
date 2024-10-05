@@ -13,8 +13,9 @@ import model.PersonDirectory;
 import model.WorkAddress;
 
 /**
- *
- * @author purka
+ * Class for PersonManagementJPanel
+ * 
+ * @author Shreyas Purkar
  */
 public class PersonManagementJPanel extends javax.swing.JPanel {
     
@@ -132,8 +133,9 @@ public class PersonManagementJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     /**
+     * Method to handle create person button click action
      * 
-     * @param evt 
+     * @param evt event 
      */
     private void btnCreatePersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreatePersonActionPerformed
         CreatePersonJPanel panel = new CreatePersonJPanel(persons, userProcessContainer);
@@ -144,8 +146,9 @@ public class PersonManagementJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnCreatePersonActionPerformed
 
     /**
+     * Method to handle list person button click action
      * 
-     * @param evt 
+     * @param evt event
      */
     private void btnListPersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListPersonActionPerformed
         ListPersonsJPanel panel = new ListPersonsJPanel(persons, userProcessContainer);
@@ -156,8 +159,9 @@ public class PersonManagementJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnListPersonActionPerformed
 
     /**
+     * Method to handle search person button click action
      * 
-     * @param evt 
+     * @param evt event
      */
     private void btnSearchPersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchPersonActionPerformed
         if (txtSearchPerson.getText().isBlank()) {
@@ -166,16 +170,7 @@ public class PersonManagementJPanel extends javax.swing.JPanel {
         }
         
         String searchValue = txtSearchPerson.getText();
-        Person existingPerson = null;
-        
-        for (Person p : persons.getPersons()) {
-            if(p.getHomeAddress().getStreetAddress().equalsIgnoreCase(searchValue) 
-                    || p.getWorkAddress().getStreetAddress().equalsIgnoreCase(searchValue)
-                    || p.getFirstName().equalsIgnoreCase(searchValue)
-                    || p.getLastName().equalsIgnoreCase(searchValue)) {
-                existingPerson = p;
-            }
-        }
+        Person existingPerson = persons.searchPerson(searchValue);
         
         if (existingPerson != null) {
             ViewPersonJPanel panel = new ViewPersonJPanel(persons, userProcessContainer, existingPerson);
@@ -209,7 +204,7 @@ public class PersonManagementJPanel extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     /**
-     * 
+     * Method to load dummy person data
      */
     private void populateDummyPersonData() {
         HomeAddress homeAddress = new HomeAddress();

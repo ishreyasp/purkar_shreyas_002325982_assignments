@@ -9,8 +9,9 @@ import model.PersonDirectory;
 import ui.personManager.PersonManagementJPanel;
 
 /**
- *
- * @author purka
+ * Class for MainJFrame
+ * 
+ * @author Shreyas Purkar
  */
 public class MainJFrame extends javax.swing.JFrame {
     
@@ -108,8 +109,9 @@ public class MainJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     /**
+     * Method to handle start button click action
      * 
-     * @param evt 
+     * @param evt event
      */
     private void btnStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartActionPerformed
         PersonManagementJPanel panel = new PersonManagementJPanel(persons, userProcessContainer);
@@ -147,10 +149,8 @@ public class MainJFrame extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MainJFrame().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new MainJFrame().setVisible(true);
         });
     }
 

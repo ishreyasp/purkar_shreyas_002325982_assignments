@@ -14,8 +14,9 @@ import model.PersonDirectory;
 import model.WorkAddress;
 
 /**
- *
- * @author purka
+ * Class for ViewPersonJPanel
+ * 
+ * @author Shreyas Purkar
  */
 public class ViewPersonJPanel extends javax.swing.JPanel {
 
@@ -579,10 +580,20 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
 
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Method to handle update person button click action
+     * 
+     * @param evt event
+     */
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         setEditMode();
     }//GEN-LAST:event_btnUpdateActionPerformed
 
+    /**
+     * Method to handle save person button click action
+     * 
+     * @param evt event
+     */
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         if (!validateFormFields()) {
              return;
@@ -705,6 +716,11 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
         txtWrkPhoneNum.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, false));
     }//GEN-LAST:event_txtWrkPhoneNumKeyReleased
 
+    /**
+     * Method to validate form fields
+     * 
+     * @return true if valid else return false
+     */
     private boolean validateFormFields() {
         if (txtFirstName.getText().isBlank()
                 && txtWrkZip.getText().isBlank()
@@ -855,6 +871,11 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
         return true;
     }
     
+    /**
+     * Method to validate and fetch home address form fields
+     * 
+     * @return homeAddress object
+     */
     private HomeAddress getHomeAddress() {
         HomeAddress homeAddress = new HomeAddress();
         homeAddress.setCity(txtHmCity.getText());
@@ -890,6 +911,11 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
         return homeAddress;
     }
 
+    /**
+     * Method to validate and fetch work address form fields
+     * 
+     * @return workAddress object
+     */
     private WorkAddress getWorkAddress() {
         WorkAddress workAddress = new WorkAddress();
         workAddress.setCity(txtWrkCity.getText());
