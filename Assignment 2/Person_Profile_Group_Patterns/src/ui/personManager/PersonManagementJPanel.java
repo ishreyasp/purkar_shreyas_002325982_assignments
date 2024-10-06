@@ -179,10 +179,7 @@ public class PersonManagementJPanel extends javax.swing.JPanel {
         }
         
         if (existingPerson == null) {
-            JOptionPane.showMessageDialog(this, 
-                "No person found", 
-                "Warning", 
-                JOptionPane.WARNING_MESSAGE);
+            lblErrSearch.setText("Person not found");
             txtSearchPerson.setText("");
             return;
         }
