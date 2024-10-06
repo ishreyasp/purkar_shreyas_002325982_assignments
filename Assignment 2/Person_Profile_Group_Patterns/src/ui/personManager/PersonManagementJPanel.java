@@ -7,10 +7,8 @@ package ui.personManager;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import model.HomeAddress;
 import model.Person;
 import model.PersonDirectory;
-import model.WorkAddress;
 
 /**
  * Class for PersonManagementJPanel
@@ -138,7 +136,7 @@ public class PersonManagementJPanel extends javax.swing.JPanel {
      * @param evt event 
      */
     private void btnCreatePersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreatePersonActionPerformed
-        CreatePersonJPanel panel = new CreatePersonJPanel(persons, userProcessContainer);
+        CreatePersonJPanel panel = new CreatePersonJPanel(persons);
         userProcessContainer.add("CreatePersonJPanel", panel);
         
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
@@ -173,7 +171,7 @@ public class PersonManagementJPanel extends javax.swing.JPanel {
         Person existingPerson = persons.searchPerson(searchValue);
         
         if (existingPerson != null) {
-            ViewPersonJPanel panel = new ViewPersonJPanel(persons, userProcessContainer, existingPerson);
+            ViewPersonJPanel panel = new ViewPersonJPanel(persons, existingPerson);
             userProcessContainer.add("ViewPersonJPanel", panel);
         
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
@@ -185,8 +183,11 @@ public class PersonManagementJPanel extends javax.swing.JPanel {
                 "No person found", 
                 "Warning", 
                 JOptionPane.WARNING_MESSAGE);
+            txtSearchPerson.setText("");
             return;
         }
+        
+        txtSearchPerson.setText("");
     }//GEN-LAST:event_btnSearchPersonActionPerformed
 
     private void txtSearchPersonKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSearchPersonKeyReleased
@@ -206,62 +207,96 @@ public class PersonManagementJPanel extends javax.swing.JPanel {
     /**
      * Method to load dummy person data
      */
-    private void populateDummyPersonData() {
-        HomeAddress homeAddress = new HomeAddress();
-        homeAddress.setCity("Boston");
-        homeAddress.setZip(02130);
-        homeAddress.setStreetAddress("11 Center Street");
-        homeAddress.setPhoneNumber(3652148790L);
-        homeAddress.setState("Massachusetts");
-        homeAddress.setUnitNumber((short) 3);
-        
-        WorkAddress workAddress = new WorkAddress();
-        workAddress.setCity("New York");
-        workAddress.setZip(2776);
-        workAddress.setStreetAddress("11 Center Street");
-        workAddress.setPhoneNumber(3652148790L);
-        workAddress.setState("Massachusetts");
-        workAddress.setUnitNumber((short) 3);
-        
+    private void populateDummyPersonData() {        
         Person firstPerson = new Person();
         firstPerson.setFirstName("John");
         firstPerson.setLastName("Doe");
         firstPerson.setAge((byte) 26);
         firstPerson.setSsn("2548-8954-855");
-        firstPerson.setHomeAddress(homeAddress);
-        firstPerson.setWorkAddress(workAddress);
+        firstPerson.setHomeAddress("11 Center Street", 
+                (short) 3, 
+                "Boston", 
+                "Massachusetts", 
+                02130, 
+                3652148790L);
+        firstPerson.setWorkAddress("369 Mass Ave", 
+                (short) 1, 
+                "New York City", 
+                "New York", 
+                44420, 
+                8527419630L);
         
         Person secondPerson = new Person();
         secondPerson.setFirstName("Tony");
         secondPerson.setLastName("Stark");
         secondPerson.setAge((byte) 26);
         secondPerson.setSsn("2548-8954-855");
-        secondPerson.setHomeAddress(homeAddress);
-        secondPerson.setWorkAddress(workAddress);
+        secondPerson.setHomeAddress("19 Priesing Street", 
+                (short) 3, 
+                "Richmond", 
+                "Virginia", 
+                96230, 
+                5752148790L);
+        secondPerson.setWorkAddress("201 Armstrong Ave", 
+                (short) 1, 
+                "Portland", 
+                "Maine", 
+                85792, 
+                8527419630L);
         
         Person thridPerson = new Person();
         thridPerson.setFirstName("Ricky");
         thridPerson.setLastName("Ponting");
         thridPerson.setAge((byte) 26);
         thridPerson.setSsn("2548-8954-855");
-        thridPerson.setHomeAddress(homeAddress);
-        thridPerson.setWorkAddress(workAddress);
+        thridPerson.setHomeAddress("11 Center Street", 
+                (short) 3, 
+                "Boston", 
+                "Massachusetts", 
+                02130, 
+                3652148790L);
+        thridPerson.setWorkAddress("369 Mass Ave", 
+                (short) 1, 
+                "New York City", 
+                "New York", 
+                44420, 
+                8527419630L);
         
         Person fourthPerson = new Person();
         fourthPerson.setFirstName("Tommy");
         fourthPerson.setLastName("Johnson");
         fourthPerson.setAge((byte) 26);
         fourthPerson.setSsn("2548-8954-855");
-        fourthPerson.setHomeAddress(homeAddress);
-        fourthPerson.setWorkAddress(workAddress);
+        fourthPerson.setHomeAddress("11 Center Street", 
+                (short) 3, 
+                "Boston", 
+                "Massachusetts", 
+                02130, 
+                3652148790L);
+        fourthPerson.setWorkAddress("369 Mass Ave", 
+                (short) 1, 
+                "New York City", 
+                "New York", 
+                44420, 
+                8527419630L);
         
         Person fifthPerson = new Person();
         fifthPerson.setFirstName("Daniel");
         fifthPerson.setLastName("Thomson");
         fifthPerson.setAge((byte) 26);
         fifthPerson.setSsn("2548-8954-855");
-        fifthPerson.setHomeAddress(homeAddress);
-        fifthPerson.setWorkAddress(workAddress);
+        fifthPerson.setHomeAddress("11 Center Street", 
+                (short) 3, 
+                "Boston", 
+                "Massachusetts", 
+                02130, 
+                3652148790L);
+        fifthPerson.setWorkAddress("369 Mass Ave", 
+                (short) 1, 
+                "New York City", 
+                "New York", 
+                44420, 
+                8527419630L);
         
         persons.addPerson(firstPerson);
         persons.addPerson(secondPerson);

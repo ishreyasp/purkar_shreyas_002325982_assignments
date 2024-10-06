@@ -15,8 +15,8 @@ public class Person {
     private String lastName;
     private byte age;
     private String ssn;
-    private HomeAddress homeAddress;
-    private WorkAddress workAddress;
+    private Address homeAddress;
+    private Address workAddress;
 
     /**
      * Default class constructor
@@ -38,8 +38,8 @@ public class Person {
                   String lastName, 
                   byte age, 
                   String ssn, 
-                  HomeAddress homeAddress, 
-                  WorkAddress workAddress) {
+                  Address homeAddress, 
+                  Address workAddress) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -80,20 +80,40 @@ public class Person {
         this.ssn = ssn;
     }
 
-    public HomeAddress getHomeAddress() {
+    public Address getHomeAddress() {
         return homeAddress;
     }
 
-    public void setHomeAddress(HomeAddress homeAddress) {
-        this.homeAddress = homeAddress;
+    public void setHomeAddress(String streetAddress, 
+            short unitNumber, 
+            String city, 
+            String state, 
+            int zipCode, 
+            long phoneNumber) {
+        this.homeAddress = new Address(streetAddress, 
+                city, 
+                state, 
+                phoneNumber, 
+                zipCode, 
+                unitNumber);
     }
 
-    public WorkAddress getWorkAddress() {
+    public Address getWorkAddress() {
         return workAddress;
     }
 
-    public void setWorkAddress(WorkAddress workAddress) {
-        this.workAddress = workAddress;
+    public void setWorkAddress(String streetAddress, 
+            short unitNumber, 
+            String city, 
+            String state, 
+            int zipCode, 
+            long phoneNumber) {
+        this.workAddress = new Address(streetAddress, 
+                city, 
+                state, 
+                phoneNumber, 
+                zipCode, 
+                unitNumber);
     }
 
     /**

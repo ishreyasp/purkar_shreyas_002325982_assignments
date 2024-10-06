@@ -4,14 +4,9 @@
  */
 package ui.personManager;
 
-import java.awt.CardLayout;
-import java.awt.Component;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import model.HomeAddress;
 import model.Person;
 import model.PersonDirectory;
-import model.WorkAddress;
 
 /**
  * Class for ViewPersonJPanel
@@ -21,17 +16,15 @@ import model.WorkAddress;
 public class ViewPersonJPanel extends javax.swing.JPanel {
 
     private PersonDirectory persons;
-    private JPanel userProcessContainer;
     private Person selectedPerson;
     
     /**
      * Creates new form ViewPersonJPanel
      */
-    public ViewPersonJPanel(PersonDirectory persons, JPanel userProcessContainer, Person selectedPerson) {
+    public ViewPersonJPanel(PersonDirectory persons, Person selectedPerson) {
         initComponents();
         
         this.persons = persons;
-        this.userProcessContainer = userProcessContainer;
         this.selectedPerson = selectedPerson;
         
         populatePersonDetails();
@@ -614,19 +607,16 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
             return;
          }
          
-         if (getHomeAddress() == null) {
+         if(!getHomeAddress(person)) {
+             return;
+         }
+                  
+         if (!getWorkAddress(person)) {
              return;
          }
          
-         person.setHomeAddress(getHomeAddress());
-         
-         if (getWorkAddress() == null) {
-            return;
-         }
-         
-         person.setWorkAddress(getWorkAddress());
-         
          persons.deletePerson(selectedPerson);
+         
          persons.addPerson(person);
          
          JOptionPane.showMessageDialog(this, 
@@ -634,8 +624,9 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
                "Success", 
                JOptionPane.INFORMATION_MESSAGE);
         
+         setViewMode();
     }//GEN-LAST:event_btnSaveActionPerformed
-
+    
     private void txtFirstNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFirstNameKeyReleased
         lblErrFirstName.setText("");
         txtFirstName.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, false));
@@ -873,83 +864,109 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
     
     /**
      * Method to validate and fetch home address form fields
-     * 
-     * @return homeAddress object
      */
-    private HomeAddress getHomeAddress() {
-        HomeAddress homeAddress = new HomeAddress();
-        homeAddress.setCity(txtHmCity.getText());
+    private boolean getHomeAddress(Person person) {
+        String city = txtHmCity.getText();
+        String streetAddress = txtHmStreetAdd.getText();
+        String state = txtHmState.getText();
+        long phoneNumber;
+        short unitNumber;
+        int zipCode;
+        
         try {
-            homeAddress.setPhoneNumber(Long.parseLong(txtHmPhoneNum.getText()));
+             phoneNumber = Long.parseLong(txtHmPhoneNum.getText());
         } catch(NumberFormatException e) {
             JOptionPane.showMessageDialog(this, 
-                "Please check the phone number input", 
+                "Phone number of your home can only be numeric value", 
                 "Warning", 
                 JOptionPane.WARNING_MESSAGE);
-            return null;
+            return false;
         }
-        homeAddress.setState(txtHmState.getText());
-        homeAddress.setStreetAddress(txtHmStreetAdd.getText());
+        
+        if (txtHmPhoneNum.getText().length() != 10) {
+            JOptionPane.showMessageDialog(this, 
+                "Phone number of your home must be 10 digits only", 
+                "Warning", 
+                JOptionPane.WARNING_MESSAGE);
+            return false;
+        }
+        
         try {
-            homeAddress.setUnitNumber(Short.parseShort(txtHmUnit.getText()));
+            unitNumber = Short.parseShort(txtHmUnit.getText());
         } catch(NumberFormatException e) {
             JOptionPane.showMessageDialog(this, 
-                "Please check the unit number input", 
+                "Unit number of your home can only be numeric value", 
                 "Warning", 
                 JOptionPane.WARNING_MESSAGE);
-            return null;
+            return false;
         }
+        
         try {
-            homeAddress.setZip(Integer.parseInt(txtHmZip.getText()));
+            zipCode = Integer.parseInt(txtHmZip.getText());
         } catch(NumberFormatException e) {
             JOptionPane.showMessageDialog(this, 
-                "Please check the zip code input", 
+                "Zip code of your home can only be numeric value", 
                 "Warning", 
                 JOptionPane.WARNING_MESSAGE);
-            return null;
+            return false;
         }
-        return homeAddress;
+        
+        person.setHomeAddress(streetAddress, unitNumber, city, state, zipCode, phoneNumber);
+        return true;
     }
 
     /**
      * Method to validate and fetch work address form fields
-     * 
-     * @return workAddress object
      */
-    private WorkAddress getWorkAddress() {
-        WorkAddress workAddress = new WorkAddress();
-        workAddress.setCity(txtWrkCity.getText());
+    private boolean getWorkAddress(Person person) {
+        String city = txtWrkCity.getText();
+        String streetAddress = txtWrkStreetAdd.getText();
+        String state = txtWrkState.getText();
+        long phoneNumber;
+        short unitNumber;
+        int zipCode;
+        
         try {
-            workAddress.setPhoneNumber(Long.parseLong(txtWrkPhoneNum.getText()));
+             phoneNumber = Long.parseLong(txtWrkPhoneNum.getText());
         } catch(NumberFormatException e) {
             JOptionPane.showMessageDialog(this, 
-                "Please check the phone number input", 
+                "Phone number of your work can only be numeric value", 
                 "Warning", 
                 JOptionPane.WARNING_MESSAGE);
-            return null;
+            return false;
         }
-        workAddress.setState(txtWrkState.getText());
-        workAddress.setStreetAddress(txtWrkStreetAdd.getText());
+        
+        if (txtWrkPhoneNum.getText().length() != 10) {
+            JOptionPane.showMessageDialog(this, 
+                "Phone number of your work must be 10 digits only", 
+                "Warning", 
+                JOptionPane.WARNING_MESSAGE);
+            return false;
+        }
+        
         try {
-            workAddress.setUnitNumber(Short.parseShort(txtWrkUnit.getText()));
+            unitNumber = Short.parseShort(txtWrkUnit.getText());
         } catch(NumberFormatException e) {
             JOptionPane.showMessageDialog(this, 
-                "Please check the unit number input", 
+                "Unit number of your work can only be numeric value", 
                 "Warning", 
                 JOptionPane.WARNING_MESSAGE);
-            return null;
+            return false;
         }
+        
         try {
-            workAddress.setZip(Integer.parseInt(txtWrkZip.getText()));
+            zipCode = Integer.parseInt(txtWrkZip.getText());
         } catch(NumberFormatException e) {
             JOptionPane.showMessageDialog(this, 
-                "Please check the zip code input", 
+                "Zip code of your work can only be numeric value", 
                 "Warning", 
                 JOptionPane.WARNING_MESSAGE);
-            return null;
+            return false;
         }
-        return workAddress;
-    }                                     
+        
+        person.setWorkAddress(streetAddress, unitNumber, city, state, zipCode, phoneNumber);
+        return true;
+    }
     
     /**
      * Method to populate accounts table

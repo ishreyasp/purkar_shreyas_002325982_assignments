@@ -5,11 +5,11 @@
 package model;
 
 /**
- * Class to store home address of the person
+ * Class to store address of the person
  * 
  * @author Shreyas Purkar
  */
-public class HomeAddress {
+public class Address {
     
     private String streetAddress;
     private String city;
@@ -21,7 +21,7 @@ public class HomeAddress {
     /**
      * Default constructor
      */
-    public HomeAddress() {
+    public Address() {
     }
 
     /**
@@ -34,7 +34,7 @@ public class HomeAddress {
      * @param zip of home of the person
      * @param unitNumberof of home of the person
      */
-    public HomeAddress(String streetAddress, 
+    public Address(String streetAddress, 
             String city, 
             String state, 
             long phoneNumber, 

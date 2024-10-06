@@ -137,7 +137,7 @@ public class ListPersonsJPanel extends javax.swing.JPanel {
         
         Person selectedPerson = (Person) tblPerson.getValueAt(selectedRow, 0);
         
-        ViewPersonJPanel panel = new ViewPersonJPanel(persons, userProcessContainer, selectedPerson);
+        ViewPersonJPanel panel = new ViewPersonJPanel(persons, selectedPerson);
         userProcessContainer.add("ViewPersonJPanel", panel);
         
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
