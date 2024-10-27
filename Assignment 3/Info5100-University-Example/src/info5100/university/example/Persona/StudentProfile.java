@@ -9,6 +9,8 @@ import info5100.university.example.CourseSchedule.CourseLoad;
 import info5100.university.example.CourseSchedule.SeatAssignment;
 import info5100.university.example.Persona.EmploymentHistory.EmploymentHistroy;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -19,6 +21,10 @@ public class StudentProfile {
     Person person;
     Transcript transcript;
     EmploymentHistroy employmenthistory;
+    private String studentEnrollmentId;
+    private double tuitionPerCredit;
+    String grade;
+    private Map<String, String> courseGrades = new HashMap<>();
 
     public StudentProfile(Person p) {
 
@@ -54,5 +60,35 @@ public class StudentProfile {
 
         return transcript.getCourseList();
 
+    }
+     public String getStudentId() {
+        return studentEnrollmentId;
+    }
+     
+    public void setStudentId(String studentId) {
+        this.studentEnrollmentId = studentId;
+    }
+
+    public String getGrade() {
+        if (grade != null) {
+            return grade;
+        } else {
+            return "N/A"; // Return a default value if grade is not available
+        }
+    }
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public String getGradeForCourse(String courseNumber) {
+        return courseGrades.getOrDefault(courseNumber, "N/A");
+    }
+
+    public void setGradeForCourse(String courseNumber, String grade) {
+        courseGrades.put(courseNumber, grade);
     }
 }

@@ -6,6 +6,7 @@
 package info5100.university.example.CourseSchedule;
 
 import info5100.university.example.CourseCatalog.Course;
+import info5100.university.example.Persona.StudentProfile;
 
 /**
  *
@@ -16,6 +17,9 @@ public class SeatAssignment {
     Seat seat;
     boolean like; //true means like and false means not like
     CourseLoad courseload;
+    private String studentId;
+    private StudentProfile studentProfile;
+    
     public SeatAssignment(CourseLoad cl, Seat s){
         seat = s;
         courseload = cl;
@@ -47,6 +51,44 @@ public class SeatAssignment {
         return getCreditHours()*grade;
     }
     
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
+    }
     
+    public String getStudentId() {
+        return studentId;
+    }
+    
+    public StudentProfile getStudentProfile() {
+        return studentProfile;
+    }
+
+    public float getGrade() {
+        return grade;
+    }
+
+    public void setGrade(float grade) {
+        this.grade = grade;
+    }
+
+    public void setSeat(Seat seat) {
+        this.seat = seat;
+    }
+
+    public void setLike(boolean like) {
+        this.like = like;
+    }
+
+    public CourseLoad getCourseload() {
+        return courseload;
+    }
+
+    public void setCourseload(CourseLoad courseload) {
+        this.courseload = courseload;
+    }
+
+    public void setStudentProfile(StudentProfile studentProfile) {
+        this.studentProfile = studentProfile;
+    }
     
 }
