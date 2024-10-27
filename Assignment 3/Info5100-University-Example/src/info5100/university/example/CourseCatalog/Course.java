@@ -36,5 +36,32 @@ public class Course {
         return credits;
     
 }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+    
+    
+
+    @Override
+    public String toString() {
+        return "Name: " + getName() + ", Number: " + getCOurseNumber() + ", Credits: " + getCredits();
+    }
     
 }

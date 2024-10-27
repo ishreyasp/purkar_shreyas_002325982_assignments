@@ -16,6 +16,7 @@ public class CourseCatalog {
     Department department;
     String lastupdated;
     ArrayList<Course> courselist; 
+    
     public CourseCatalog(Department d){
         courselist = new ArrayList();
         department = d;
@@ -40,4 +41,9 @@ public class CourseCatalog {
         return null;
     }
 
+    public Department getDepartment() {
+        return department;
+    }
+
+    
 }

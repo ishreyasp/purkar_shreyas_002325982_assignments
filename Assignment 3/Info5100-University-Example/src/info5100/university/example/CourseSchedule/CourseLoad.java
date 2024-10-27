@@ -19,7 +19,7 @@ public class CourseLoad {
         seatassignments = new ArrayList();
         semester = s;
     }
-    public SeatAssignment newSeatAssignment(CourseOffer co){
+    public SeatAssignment registerStudentInClass(CourseOffer co){
         
         Seat seat = co.getEmptySeat(); // seat linked to courseoffer
         if (seat==null) return null;
@@ -44,6 +44,9 @@ public class CourseLoad {
     }
         public ArrayList<SeatAssignment> getSeatAssignments(){
             return seatassignments;
+        }
+        public String getSemester() {
+            return semester;
         }
             
 }

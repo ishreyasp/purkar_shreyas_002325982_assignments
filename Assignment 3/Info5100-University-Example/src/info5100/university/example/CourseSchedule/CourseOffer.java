@@ -19,6 +19,11 @@ public class CourseOffer {
     Course course;
     ArrayList<Seat> seatlist;
     FacultyAssignment facultyassignment;
+     private ArrayList<SeatAssignment> seatAssignments;
+
+    public ArrayList<SeatAssignment> getSeatAssignments() {
+        return seatAssignments;
+    }
 
     public CourseOffer(Course c) {
         course = c;
@@ -90,4 +95,17 @@ public class CourseOffer {
         return course.getCredits();
     }
 
+    public Course getCourse() {
+        return course;
+    }
+
+    public ArrayList<Seat> getSeatlist() {
+        return seatlist;
+    }
+
+    public FacultyAssignment getFacultyassignment() {
+        return facultyassignment;
+    }
+
+    
 }
