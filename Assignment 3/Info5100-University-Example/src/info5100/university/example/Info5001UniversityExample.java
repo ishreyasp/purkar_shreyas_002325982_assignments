@@ -59,17 +59,17 @@ public class Info5001UniversityExample {
         addCoreAndElectives(coursecatalog, department, "INFO 5100");
                 
         //Create course schedule for information systems for semester Fall 2024
-//        CourseSchedule courseSchedule = department.newCourseSchedule("Fall 2024");
-//        for(int i=0; i<courses.size()-1; i++) {
-//            CourseOffer courseOfferedByInfo = courseSchedule.newCourseOffer(courses.get(i).getCOurseNumber());
-//            if(courseOfferedByInfo == null) return;
-//            courseOfferedByInfo.generatSeats(30);
-//        }
+        CourseSchedule courseSchedule = department.newCourseSchedule("Fall 2024");
+        for(int i=0; i<courses.size()-1; i++) {
+            CourseOffer courseOfferedByInfo = courseSchedule.newCourseOffer(courses.get(i).getCOurseNumber());
+            if(courseOfferedByInfo == null) return;
+            courseOfferedByInfo.generatSeats(30);
+        }
 
-        //List<CourseOffer> courseOffers = courseSchedule.getCourseOffers();
+        List<CourseOffer> courseOffers = courseSchedule.getCourseOffers();
            
         //Add faculties in information systems department
-        //addFacultyAndAssignCourses(personDirectory, facultyDirectory, courseOffers); 
+        addFacultyAndAssignCourses(personDirectory, facultyDirectory, courseOffers); 
 
         //Display course schedule
         //displayCourseSchedule(courseSchedule, facultyDirectory);
