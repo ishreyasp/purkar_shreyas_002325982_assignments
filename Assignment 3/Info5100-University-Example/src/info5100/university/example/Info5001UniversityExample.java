@@ -56,11 +56,8 @@ public class Info5001UniversityExample {
         browseCourseByCourseNumber(coursecatalog, "INFO 5100");
         
         //Add core and elective courses in information systems department
-        //addCoreAndElectives(coursecatalog, department, "INFO 5100");
-        
-        //Add core and elective courses in data management department
-        //addCoreAndElectives(dataCoursecatalog, dataDepartment, "DAMG 6100");
-        
+        addCoreAndElectives(coursecatalog, department, "INFO 5100");
+                
         //Create course schedule for information systems for semester Fall 2024
 //        CourseSchedule courseSchedule = department.newCourseSchedule("Fall 2024");
 //        for(int i=0; i<courses.size()-1; i++) {
