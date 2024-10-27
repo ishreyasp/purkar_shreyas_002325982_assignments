@@ -72,13 +72,13 @@ public class Info5001UniversityExample {
         addFacultyAndAssignCourses(personDirectory, facultyDirectory, courseOffers); 
 
         //Display course schedule
-        //displayCourseSchedule(courseSchedule, facultyDirectory);
+        displayCourseSchedule(courseSchedule, facultyDirectory);
         
         //Add and register students in department
         addAndRegisterStudentsToCourse(studentDirectory, personDirectory, courseOffers, courseSchedule);    
 
         //Display report for semester
-        //printReport(studentDirectory, facultyDirectory, "Fall 2024");
+        printReport(studentDirectory, facultyDirectory, "Fall 2024");
     }
 
     private static List<Course> getCourses(CourseCatalog coursecatalog) {
