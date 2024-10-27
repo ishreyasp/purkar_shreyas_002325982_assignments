@@ -58,4 +58,13 @@ public class FacultyProfile {
         return false;
     }
 
+    public Person getPerson() {
+        return person;
+    }
+
+    public ArrayList<FacultyAssignment> getFacultyAssignments() {
+        return facultyassignments;
+    }
+    
+
 }

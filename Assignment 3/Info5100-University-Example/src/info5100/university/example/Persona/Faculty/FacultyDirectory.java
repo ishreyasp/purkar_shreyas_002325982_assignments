@@ -55,5 +55,9 @@ public class FacultyDirectory {
         }
             return null; //not found after going through the whole list
          }
+
+    public ArrayList<FacultyProfile> getTeacherlist() {
+        return teacherlist;
+    }
     
-}
+ }
