@@ -75,7 +75,7 @@ public class Info5001UniversityExample {
         //displayCourseSchedule(courseSchedule, facultyDirectory);
         
         //Add and register students in department
-        //addAndRegisterStudentsToCourse(studentDirectory, personDirectory, courseOffers, courseSchedule);    
+        addAndRegisterStudentsToCourse(studentDirectory, personDirectory, courseOffers, courseSchedule);    
 
         //Display report for semester
         //printReport(studentDirectory, facultyDirectory, "Fall 2024");
